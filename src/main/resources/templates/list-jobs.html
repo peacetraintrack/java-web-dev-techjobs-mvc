@@ -9,14 +9,17 @@
 
 <div class="container body-content">
 
-    <table class="job-listing">
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-        <th:block th:each="job : ${jobs}">
+    <th:block block th:each="job : ${jobs}">
+        <table class="job-listing">
             <tr>
                 <td th:text="${'ID:  ' + job.id}">Id</td>
-            <tr/>
+            </tr>
+            <tr>
+                <td th:text="${'Name:  ' + job.name}">Id</td>
+            </tr>
             <tr>
                 <td th:text="${'Employer:  ' + job.employer}">Employer</td>
             </tr>
@@ -29,13 +32,9 @@
             <tr>
                 <td th:text="${'Skill:  ' + job.coreCompetency}">Skill</td>
             </tr>
-        </th:block>
-    </table>
-
-
-
+        </table>
+    </th:block>
 </div>
-<!-- TODO #1 - Use a loop to display job results in a table. -->
 </body>
 </html>
-
+<!-- TODO #1 - Use a loop to display job results in a table. -->
